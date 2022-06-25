@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="bootstrap.min.css">
+	<title>ajax 请求</title>
+	<style>
+		.input{
+			width: 500px;
+			padding: 20px;
+			margin: auto;
+			margin-top: 20px;
+			border: gray 1px solid;
+			border-radius: 2%;
+		}
+
+		.result_table{
+			width: 800px;
+			padding: 20px;
+			margin: auto;
+			margin-top: 20px;
+		}
+
+		table{
+			border-bottom: gray 1px solid;
+		}
+
+		.table th, .table td{
+			text-align: center;
+			padding: 5px;
+		}
+	</style>
+	<script src="index.js"></script>
+	<script src="axios.min.js"></script>
+</head>
+<body>
+	<div class="input">
+		<form>
+			<div class="form-row">
+				<div class="form-group col-md-6">
+					<label for="inputEmail4">学号</label>
+					<input type="text" class="form-control" id="number">
+				</div>
+				<div class="form-group col-md-6">
+					<label for="inputPassword4">姓名</label>
+					<input type="text" class="form-control" id="name">
+				</div>
+			</div>
+			<div class="form-row">
+				<div class="form-group col-md-4">
+					<label for="inputCity">平时成绩</label>
+					<input type="number" class="form-control" id="score1" max="100" min="0" >
+ 				</div>
+				<div class="form-group col-md-4">
+					<label for="inputCity">期中成绩</label>
+					<input type="number" class="form-control" id="score2" max="100" min="0" >
+				</div>
+				<div class="form-group col-md-4">
+					<label for="inputCity">期末成绩</label>
+					<input type="number" class="form-control" id="score3" max="100" min="0" >
+				</div>
+			</div>
+		</form>
+		<button class="btn btn-primary" onclick="onAdd()">添加</button>
+	</div>
+	<div class="result_table">
+		<table class="table table-striped">
+			<thead>
+				<tr>
+					<th scope="col">#</th>
+					<th scope="col">学号</th>
+					<th scope="col">姓名</th>
+					<th scope="col">平时成绩</th>
+					<th scope="col">期中成绩</th>
+					<th scope="col">期末成绩</th>
+					<th scope="col">操作</th>
+				</tr>
+			</thead>
+			<tbody id="result">
+			</tbody>
+		</table>
+	</div>
+	<a href="../../index.html" style="font-size: 20px;text-decoration: none;color: rgb(255, 144, 162);position: fixed;top: 95%;left: 95%;">回主页</a>
+</body>
+</html>

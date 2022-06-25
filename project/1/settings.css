@@ -1,0 +1,145 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
+.head{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: black;
+
+}
+
+#title{
+    margin: 0;
+    color: pink;
+    text-align: center;
+    font-size: 50px;
+}
+
+.body{
+    background-color: #bbe8ff;
+    margin-left: 220px;
+}
+
+.bodys{
+    margin: 0 300px;
+}
+
+.mulu{
+    background-color: rgb(255, 255, 180);
+    border-left: 15px solid greenyellow;
+    padding-left: 20px;
+}
+
+.link{
+    color: rgb(255, 144, 162);
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.son{
+    padding-left: 60px;
+}
+
+.links{
+    color: rgb(255, 144, 162);
+    font-size: 20px;
+    padding-left: 20px;
+    text-decoration: none;
+}
+
+#platform{
+    background-color: rgb(255, 255, 180);
+    border-left: 15px solid greenyellow;
+    padding-left: 20px;
+}
+
+#steam{
+    color: rgb(20, 94, 255);
+    font-size: 40px;
+    padding-left: 20px;
+    margin: 0;
+}
+
+#xbox{
+    color: rgb(10, 230, 29);
+    font-size: 40px;
+    padding-left: 20px;
+    margin: 0;
+}
+
+#epic{
+    color: rgb(255, 239, 20);
+    font-size: 40px;
+    padding-left: 20px;
+    margin: 0;
+}
+
+.content{
+    font-size: 20px;
+    padding-left: 20px;
+    margin: 5px;
+}
+
+#more{
+    background-color: rgb(255, 255, 180);
+    border-left: 15px solid greenyellow;
+    padding-left: 20px;
+}
+
+a:hover{
+    background-color: rgb(255, 125, 38);
+}
+
+.top{
+    color: rgb(255, 144, 162);
+    font-size: 20px;
+    text-align: right;
+    text-decoration: none;
+}
+
+#pay{
+    padding-left: 20px;
+    border-bottom: 5px solid black;
+}
+
+#place
+{
+    padding-left: 20px;
+    border-bottom: 5px solid black;
+}
+
+.tail{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: black;
+}
+
+.tails{
+    margin: 0;
+    color: pink;
+    text-align: center;
+    font-size: 20px;
+}
+
+.photo{
+    text-align: center;
+}
+
+.index{
+    float: left;
+    background-color: white;
+    border: 10px solid #66ccff;
+    width: 200px;
+    height: 2085px;
+}
+
+.back{
+    font-size: 20px;
+    text-decoration: none;
+    color: rgb(255, 144, 162);
+    position: fixed;
+    top: 95%;
+    left: 95%;
+}

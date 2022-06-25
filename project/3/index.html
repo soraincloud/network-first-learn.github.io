@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    table{
+        border-collapse:collapse;
+        border-top:        2px black solid;
+        border-bottom:     2px black solid;
+    }
+    th{
+        background-color: rgb(81,130,187);
+        color: #fff;
+        padding:    0 15px 0 15px;
+        border-bottom:     thin black solid;
+        text-transform:     capitalize;
+    }
+    tr:nth-child(2n+1){
+        background-color:rgb(211,223,237);
+    }
+    td{
+        text-align: center;
+        padding:    0 15px 0 15px;
+    }
+    .evenline{
+        background-color:rgb(211,223,237);
+    }
+    .correct{
+        color:green;
+    }
+    .wrong{
+        color:red;
+    }
+    </style>
+</head>
+<body>
+    <a href="../../index.html" style="font-size: 20px;text-decoration: none;color: rgb(255, 144, 162);position: fixed;top: 95%;left: 95%;">回主页</a>
+    <h1>算分区</h1>
+    <p>
+        <table>
+            <thead>
+                <tr>
+                    <th>要求</th>
+                    <th>函数</th>
+                    <th>信息</th>
+                </tr>
+            </thead>
+            <tbody id="score">
+            </tbody>
+        </table>
+    </p>
+    <h1>要求1</h1>
+    <p>
+    <button onclick="testReq1()">测试要求1</button>
+    </p>
+    <table>
+        <thead>
+            <tr>
+                <th>轮数</th>
+                <th>输入</th>
+                <th>最大值</th>
+                <th>最小值</th>
+                <th>结果</th>
+            </tr>
+        </thead>
+        <tbody id="req1">
+        </tbody>
+    </table>
+    <h1>要求5</h1>
+    <p>
+        <input type="number" id="input">
+        <button onclick="onButtonClick()">提交</button>
+    </p>
+    <table>
+        <thead>
+            <tr>
+                <th>轮数</th>
+                <th>输入</th>
+                <th>最大值</th>
+                <th>最小值</th>
+                <th>结果</th>
+            </tr>
+        </thead>
+        <tbody id="output">
+        </tbody>
+    </table>
+    <script src="index.js"></script>
+    <script src="score.js"></script>
+    <script>
+        window.onload =function(){
+            checkSuits("score",[
+                {
+                    reqNo:1,
+                    trigger:oneLineStr,
+                    checker:function(ret, input, expect){
+                        let t = document.createElement("table");
+                        t.innerHTML = ret;
+                        return checkTableRows(t,[expect])
+                    },
+                    cases:[
+                        makeCase([1,2,3,4,5],['1','2','3','4','5']),
+                        makeCase([2,2,3,4,5],['2','2','3','4','5']),
+                        makeCase([3,2,5,4,5],['3','2','5','4','5']),
+                    ]
+                },
+                makeSuitTableCheck(1, testReq1, "req1",
+                    [[]],
+                    [[
+                            [1,2143,1234,4321,3087],
+                            [1,2143,1234,4321,3087],
+                            [1,2143,1234,4321,3087],
+                            [1,2143,1234,4321,3087]
+                        
+                    ]]
+                ),
+                makeSuitFunctionCheck(2, getDigital_d, [[2143],[21453]], [[2,1,4,3],[2,1,4,5,3]]),
+                makeSuitFunctionCheck(2, getDigital_s, [[2143],[21453]], [['2','1','4','3'],['2','1','4','5','3']]),
+                makeSuitFunctionCheck(3, getDigitalMax_d, [[[2,1,4,3]],[[2,1,4,5,3]]], [4321,54321]),
+                makeSuitFunctionCheck(3, getDigitalMax_s, [[['2','1','4','3']],[['2','1','4','5','3']]], ['4321','54321']),
+                makeSuitFunctionCheck(3, getDigitalMin_d, [[[2,1,4,3]],[[2,1,4,5,3]]], [1234,12345]),
+                makeSuitFunctionCheck(3, getDigitalMin_s, [[['2','1','4','3']],[['2','1','4','5','3']]], ['1234','12345']),
+                makeSuitFunctionCheck(4, getMax_d, [[2143],[21453]], [4321,54321]),
+                makeSuitFunctionCheck(4, getMax_s, [['2143'],['21453']], ['4321','54321']),
+                makeSuitFunctionCheck(4, getMin_d, [[2143],[21453]], [1234,12345]),
+                makeSuitFunctionCheck(4, getMin_s, [['2143'],['21453']], ['1234','12345']),
+                makeSuitTableCheck(5, 
+                    function onButtonClick(){
+                        let tag = document.getElementById("input");
+                        tag.value = '4251';
+                        window.onButtonClick();
+                    },
+                    "output",
+                    [[]],
+                    [[
+                        [1,4251,5421,1245,4176],
+                        [2,4176,7641,1467,6174],
+                    ]]
+                )
+            ]);
+        }
+    </script>
+</body>
+</html>

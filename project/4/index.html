@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>对象模型和事件</title>
+	<link rel="stylesheet" href="bootstrap.min.css">
+	<style>
+		.input{
+			width: 500px;
+			padding: 20px;
+            padding-right: 50px;
+			margin: auto;
+			margin-top: 20px;
+            margin-bottom: 100px;
+			border: #ced4da 1px solid;
+		}
+	</style>
+</head>
+<body>
+    <div class="input">
+		<form class=".was-validated">
+            <div class="form-group row">
+                <label class="col-sm-3 col-form-label">昵称</label>
+                <input type="text" class="form-control col-sm-9" id="nickname" placeholder="请输入你的昵称" autocomplete="off" oninput="nicknameinput()">
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-3 col-form-label">用户名</label>
+                <input type="text" readonly class="form-control col-sm-9" id="username">
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-3 col-form-label">密码</label>
+                <input type="password" class="form-control col-sm-9" id="password" placeholder="请输入密码" oninput="passwordinput()">
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-3 col-form-label">重复密码</label>
+                <input type="password" class="form-control col-sm-9" id="repeatpsd" placeholder="请重复密码" oninput="passwordinput()">
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="protocal" onclick="protocalclick()">
+                <label class="form-check-label" for="defaultCheck1">
+                    同意<a href="https://passport.baidu.com/static/passpc-account/html/protocal.html">用户协议</a>
+                </label>
+            </div>
+		</form>
+        <div id="massage" style="color:red;margin:10px"></div>
+        <div style="text-align: center;">
+            <button class="btn btn-primary" id="submit">注册新用户</button>
+        </div>
+	</div>
+    <a href="../../index.html" style="font-size: 20px;text-decoration: none;color: rgb(255, 144, 162);position: fixed;top: 95%;left: 95%;">回主页</a>
+</body>
+<script src="index.js"></script>
+</html>
